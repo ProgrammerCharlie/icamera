@@ -4,6 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import './ipcMain'
 import createTray from './tray'
+import drag from './drag'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -25,7 +26,10 @@ function createWindow(): void {
   })
   // 等比例缩放
   mainWindow.setAspectRatio(1)
-  // mainWindow.setAspectRatio(4/3)
+  // 拖动窗口移动
+  drag(mainWindow)
+
+  if(is.dev) mainWindow.webContents.openDevTools()
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()

@@ -4,7 +4,8 @@ declare global {
   interface Window {
     electron: ElectronAPI
     api: {
-      contextmenu: () => void
+      contextmenu: () => void,
+      drag: (options: {x: number, y: number}) => void
     }
   }
 }

@@ -4,12 +4,16 @@ import Setting from '@renderer/components/Setting.vue'
 import {Setting as SettingIcon, CameraFive, InnerShadowTopLeft} from '@icon-park/vue-next';
 import { useConfigStore } from '@renderer/store/config'
 import { onMounted } from 'vue'
+import useDrag from '@renderer/hooks/useDrag'
 const configStore = useConfigStore()
+const {drag} = useDrag()
 
 onMounted(() => {
   window.addEventListener('contextmenu', () => {
     window.api.contextmenu()
   })
+
+  drag.run()
 })
 </script>
 

@@ -5,6 +5,10 @@ import { electronAPI } from '@electron-toolkit/preload'
 const api = {
   contextmenu: () => {
     electronAPI.ipcRenderer.send('contextmenu')
+  },
+  drag: (options: {x: number, y: number}) => {
+    // console.log(options);
+    electronAPI.ipcRenderer.invoke('drag', options)
   }
 }
 

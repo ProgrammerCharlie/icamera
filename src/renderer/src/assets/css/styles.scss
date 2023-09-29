@@ -5,13 +5,13 @@
   overflow: hidden;
 }
 
-textarea {
-  -webkit-app-region: no-drag;
-}
+// textarea {
+//   -webkit-app-region: no-drag;
+// }
 
-html {
-  -webkit-app-region: drag;
-}
+// html {
+//   -webkit-app-region: drag;
+// }
 
 ::-webkit-scrollbar{
   width: 1px;
