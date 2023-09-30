@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: camera-electron-app
+appId: com.feirui.icamera
+productName: ICamera
 directories:
   buildResources: build
 files:
