@@ -9,6 +9,9 @@ const api = {
   drag: (options: {x: number, y: number}) => {
     // console.log(options);
     electronAPI.ipcRenderer.invoke('drag', options)
+  },
+  setWinSize: (options: {width: number, height: number, aspectRatio: number}) => {
+    electronAPI.ipcRenderer.send("setWinSize", options)
   }
 }
 

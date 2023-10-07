@@ -3,7 +3,7 @@
     :class="`h-screen w-screen overflow-hidden ${configStore.config.isRoundedFull && 'rounded-full'}`" 
     :style="`border: ${configStore.config.borderWidth}px solid ${configStore.config.borderColor}; `"
   >
-    <video ref="camera" :class="`object-cover h-full ${configStore.config.isRoundedFull && 'rounded-full'}`" />
+    <video ref="camera" :class="`object-cover w-full h-full ${configStore.config.isRoundedFull && 'rounded-full'}`" />
   </main>
 </template>
 

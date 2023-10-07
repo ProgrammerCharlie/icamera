@@ -8,6 +8,24 @@ import useDrag from '@renderer/hooks/useDrag'
 const configStore = useConfigStore()
 const {drag} = useDrag()
 
+const changeRound = () => {
+  configStore.config.isRoundedFull = !configStore.config.isRoundedFull
+
+  if(configStore.config.isRoundedFull) {
+    window.api.setWinSize({
+      width: 250,
+      height: 250,
+      aspectRatio: 1
+    })
+  } else {
+    window.api.setWinSize({
+      width: 500,
+      height: 280,
+      aspectRatio: 16/9
+    })
+  }
+}
+
 onMounted(() => {
   window.addEventListener('contextmenu', () => {
     window.api.contextmenu()
@@ -38,7 +56,7 @@ onMounted(() => {
         class="absolute text-2xl bottom-8 left-1/2 -translate-x-1/2 
         text-slate-200 cursor-pointer z-50 hidden group-hover:block"
         v-if="configStore.config.page == 'camera'"
-        @click="configStore.config.isRoundedFull = !configStore.config.isRoundedFull"
+        @click="changeRound"
       />
     </section>
     <section>

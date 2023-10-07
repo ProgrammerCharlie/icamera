@@ -5,11 +5,12 @@ import icon from '../../resources/icon.png?asset'
 import './ipcMain'
 import createTray from './tray'
 import drag from './drag'
+import './windowSize'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
-    width: 250,
-    height: 250,
+    width: 500,
+    height: 280,
     minWidth: 180,
     minHeight: 180,
     show: false,
@@ -25,11 +26,9 @@ function createWindow(): void {
     transparent: true,
   })
   // 等比例缩放
-  mainWindow.setAspectRatio(1)
+  // mainWindow.setAspectRatio(1)
   // 拖动窗口移动
   drag(mainWindow)
-
-  if(is.dev) mainWindow.webContents.openDevTools()
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
