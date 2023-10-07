@@ -1,7 +1,7 @@
 {
-  "name": "icamera",
+  "name": "iCamera",
   "version": "1.0.0",
-  "description": "An Electron application with Vue and TypeScript",
+  "description": "一个Electron摄像头软件",
   "main": "./out/main/index.js",
   "author": "example.com",
   "homepage": "https://www.electronjs.org",
